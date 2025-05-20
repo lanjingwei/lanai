@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LANAI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <div class="header-left">
+                <div class="logo"><img src="logo.png" alt="LANAI Logo" class="logo-image"></div>
+                <div class="api-status" id="apiStatus">
+                    <span class="api-status-indicator" id="apiStatusIndicator"></span>
+                    <span class="api-status-text" id="apiStatusText">检查API连接...</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="model-toggle">
+                    <select id="modelSelect" class="model-select">
+                        <option value="酒馆-Flash-Thinking">酒馆-Flash-Thinking</option>
+                        <option value="qwen-plus">qwen-plus</option>
+                    </select>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="icon-button" id="newSessionButton" title="新会话">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="icon-button" id="historyButton" title="历史记录">
+                    <i class="fas fa-list-ul"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div id="welcomeMessage" class="welcome-message-container">
+                <h1 class="welcome-line-1">Hi，你好</h1>
+                <p class="welcome-line-2">欢迎体验无限制无审查的AI助手</p>
+                <p class="welcome-line-3">开发者：lion蘭 </p>
+            </div>
+            <!-- 消息内容将在这里动态添加 -->
+        </div>
+        
+        <div class="input-container">
+            <textarea id="userInput" placeholder="发送消息..." rows="1"></textarea>
+            <button id="sendButton" class="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 历史记录窗口 -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>对话历史</h3>
+                <button id="closeHistoryModal" class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="historyList" class="history-list">
+                    <!-- 历史记录将动态添加在这里 -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="clearHistory" class="secondary-button">清空历史</button>
+                <button id="closeHistory" class="primary-button">关闭</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
